@@ -26,6 +26,7 @@ return [
     'certificates_slide_2' => 'Second Slide',
     'products_title' => 'Our Products',
     'products_circular_bar' => 'Circular Bar',
+    'products_view_all' => 'View All Products',
     'sustainability_title' => 'Sustainability',
     'sustainability_description_1' => 'At Alssad Steel Industry Company, sustainability is the core of our strategy. We seek to make a positive impact on the environment and society by providing high-quality products that comply with local and international standards and support our national economy.',
     'sustainability_description_2' => 'We align with Saudi Vision 2030 by focusing on reducing environmental impact and enhancing social responsibility through more efficient production processes and less resource waste.',

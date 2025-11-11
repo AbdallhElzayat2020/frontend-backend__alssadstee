@@ -39,10 +39,12 @@ Route::group(
         Route::get('/integrated-system', [IntegratedSystemController::class, 'index'])->name('integrated-system');
 
         Route::get('/jobs', [JobController::class, 'index'])->name('jobs');
+        Route::post('/jobs', [JobController::class, 'store'])->name('jobs.store');
 
         Route::get('/media', [MediaController::class, 'index'])->name('media');
 
         Route::get('/products', [ProductsController::class, 'index'])->name('products');
+        Route::get('/products/{product:slug}', [ProductsController::class, 'show'])->name('products.show');
 
         Route::get('/quality', [QualityController::class, 'index'])->name('quality');
 

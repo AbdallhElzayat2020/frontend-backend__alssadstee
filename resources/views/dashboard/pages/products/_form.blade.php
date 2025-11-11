@@ -23,15 +23,6 @@
         </div>
 
         <div class="mb-3">
-            <label class="form-label" for="slug">Slug (from English name if empty)</label>
-            <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror"
-                value="{{ old('slug', $product->slug ?? '') }}" placeholder="seo-friendly-slug" />
-            @error('slug')
-                <div class="invalid-feedback">{{ $message }}</div>
-            @enderror
-        </div>
-
-        <div class="mb-3">
             <label class="form-label" for="description_en">Description (English)</label>
             <textarea id="description_en" name="description[en]" rows="6"
                 class="form-control @error('description.en') is-invalid @enderror"

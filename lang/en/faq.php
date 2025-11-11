@@ -20,4 +20,5 @@ return [
     'questions_a7' => 'Yes, we specialize in supplying iron products for both large and small projects. We have the capacity to meet the needs of massive projects thanks to our advanced production facilities and efficient supply chain. You can coordinate with our sales team to discuss project details and provide the best solutions.',
     'questions_q8' => 'What payment methods are available?',
     'questions_a8' => 'We accept multiple payment methods including bank transfer, checks, and cash payment. For large orders, flexible payment terms can be arranged as agreed. Please contact our sales team to discuss payment details suitable for you.',
+    'empty_state' => 'No questions available right now.',
 ];

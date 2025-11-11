@@ -81,9 +81,7 @@
                                             <option value="bars" {{ old('subject') == 'bars' ? 'selected' : '' }}>
                                                 {{ __('quote.form_product_bars') }}
                                             </option>
-                                            <option value="other" {{ old('subject') == 'other' ? 'selected' : '' }}>
-                                                {{ __('quote.form_product_other') }}
-                                            </option>
+
                                         </select>
                                         @error('subject')
                                             <div class="invalid-feedback">{{ $message }}</div>

@@ -34,6 +34,20 @@
             </a>
         </li>
 
+        <li class="menu-item {{ request()->routeIs('dashboard.faqs.*') ? 'active' : '' }}">
+            <a href="{{ route('dashboard.faqs.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-help"></i>
+                <div data-i18n="FAQs">FAQs</div>
+            </a>
+        </li>
+
+        <li class="menu-item {{ request()->routeIs('dashboard.job-applications.*') ? 'active' : '' }}">
+            <a href="{{ route('dashboard.job-applications.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-briefcase"></i>
+                <div data-i18n="Job Applications">Job Applications</div>
+            </a>
+        </li>
+
         <li class="menu-item {{ request()->routeIs('dashboard.products.*') ? 'active' : '' }}">
             <a href="{{ route('dashboard.products.index') }}" class="menu-link">
                 <i class="menu-icon tf-icons ti ti-package"></i>

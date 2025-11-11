@@ -27,8 +27,21 @@
                             <i class="fas fa-briefcase me-2"></i>
                             {{ __('jobs.form_title') }}
                         </h3>
-
-                        <form id="jobApplicationForm">
+                        @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+                        @error('error')
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{ $message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @enderror
+                        <form id="jobApplicationForm" method="POST" action="{{ route('jobs.store') }}"
+                            enctype="multipart/form-data">
+                            @csrf
                             <!-- Personal Information -->
                             <div class="form-section mb-4">
                                 <h4 class="section-title mb-3">
@@ -65,6 +78,8 @@
                                     </div>
                                     <div class="col-md-6">
                                         <label for="position" class="form-label">{{ __('jobs.form_position') }}</label>
+
+
                                         <input type="text" name="position" value="{{ old('position') }}"
                                             class="form-control form-control-lg" id="position"
                                             placeholder="{{ __('jobs.form_position') }}" />
@@ -77,7 +92,7 @@
                                             class="form-label">{{ __('jobs.form_cover_letter') }}</label>
                                         <textarea name="message" value="{{ old('message') }}"
                                             class="form-control form-control-lg" id="coverLetter" rows="5"
-                                            placeholder="{{ __('jobs.form_cover_letter_placeholder') }}"></textarea>
+                                            placeholder="{{ __('jobs.form_cover_letter_placeholder') }}">{{ old('message') }}</textarea>
                                         @error('message')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror

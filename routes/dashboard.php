@@ -4,6 +4,8 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\Auth\LoginController;
 use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Dashboard\QuoteController;
+use App\Http\Controllers\Dashboard\JobAppliedController;
+use App\Http\Controllers\Dashboard\FaqController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -25,6 +27,14 @@ Route::middleware(['auth'])->prefix('admin')->name('dashboard.')->group(function
     Route::get('/quotes', [QuoteController::class, 'index'])->name('quotes.index');
     Route::get('/quotes/{quote}', [QuoteController::class, 'show'])->name('quotes.show');
     Route::delete('/quotes/{quote}', [QuoteController::class, 'destroy'])->name('quotes.destroy');
+
+    // Job Applications Routes
+    Route::get('/job-applications', [JobAppliedController::class, 'index'])->name('job-applications.index');
+    Route::get('/job-applications/{application}', [JobAppliedController::class, 'show'])->name('job-applications.show');
+    Route::delete('/job-applications/{application}', [JobAppliedController::class, 'destroy'])->name('job-applications.destroy');
+
+    // FAQs Routes
+    Route::resource('faqs', FaqController::class)->except(['show']);
 
     // Products Routes
     Route::resource('products', ProductController::class)->except(['show']);

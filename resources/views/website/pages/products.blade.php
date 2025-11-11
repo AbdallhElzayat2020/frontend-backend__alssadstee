@@ -2,61 +2,68 @@
 
 @section('title', 'Products')
 @section('content')
-    <!-- About Page Header -->
-    <section class="about-page-header">
-        <div class="about-header-overlay"></div>
+    <!-- Page Header - Light -->
+    <section class="page-header-light py-4">
         <div class="container">
-            <div class="about-header-content">
-                <h1 class="about-page-title">{{ __('products.title') }}</h1>
-            </div>
+            <h1 class="page-title mb-1">{{ __('products.title') }}</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="{{ route('home') }}">{{ __('header.home') ?? 'Home' }}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{ __('products.title') }}</li>
+                </ol>
+            </nav>
         </div>
     </section>
 
     <!-- Products Section    -->
-    <section id="products" class="py-5 light_background">
+    <section id="products" class="py-5 products-page">
         <div class="container">
 
             <div class="text-center mb-5">
                 <h2 class="section-title">{{ __('products.title') }}</h2>
             </div>
 
-            <div class="row align-items-center">
-
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="card shadow-sm border-0 overflow-hidden p-3 product-card">
-                        <img src="{{asset('assets/website/images/product_2.png')}}" class="img-fluid"
-                            alt="عمال في المصنع" />
-                        <a href="#" class="product-link">
-                            <h3 class="product-title">
-                                {{ __('products.circular_bar') }}
-                            </h3>
-                        </a>
+            <div class="row g-4">
+                @forelse ($products as $product)
+                    <div class="col-md-4">
+                        <div class="card shadow-sm border-0 overflow-hidden product-card h-100">
+                            @if ($product->image)
+                                <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid"
+                                    alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
+                            @else
+                                <img src="{{ asset('assets/website/images/product_2.png') }}" class="img-fluid" alt="product">
+                            @endif
+                            <div class="p-3">
+                                <h3 class="product-title mb-2">
+                                    <a class="product-link" href="{{ route('products.show', $product->slug) }}">
+                                        {{ $product->getTranslation('name', app()->getLocale()) }}
+                                    </a>
+                                </h3>
+                                @php
+                                    $description = $product->getTranslation('description', app()->getLocale());
+                                @endphp
+                                @if ($description)
+                                    <p class="text-muted mb-0">
+                                        {{ \Illuminate\Support\Str::limit($description, 150) }}
+                                    </p>
+                                @endif
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="card shadow-sm border-0 overflow-hidden p-3 product-card">
-                        <img src="{{asset('assets/website/images/product_2.png')}}" class="img-fluid"
-                            alt="عمال في المصنع" />
-                        <a href="#" class="product-link">
-                            <h3 class="product-title">
-                                {{ __('products.circular_bar') }}
-                            </h3>
-                        </a>
+                @empty
+                    <div class="col-12">
+                        <div class="text-center py-5">
+                            <p class="text-muted">{{ __('products.empty_state') }}</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="card shadow-sm border-0 overflow-hidden p-3 product-card">
-                        <img src="{{asset('assets/website/images/product_2.png')}}" class="img-fluid"
-                            alt="عمال في المصنع" />
-                        <a href="#" class="product-link">
-                            <h3 class="product-title"> شريط دائري </h3>
-                        </a>
-                    </div>
-                </div>
-
+                @endforelse
             </div>
+
+            @if (method_exists($products, 'links'))
+                <div class="d-flex justify-content-center mt-4">
+                    {{ $products->links() }}
+                </div>
+            @endif
         </div>
     </section>
     <!-- Projects Section -->

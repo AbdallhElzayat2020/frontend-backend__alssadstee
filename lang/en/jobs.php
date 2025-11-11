@@ -15,7 +15,7 @@ return [
     'form_national_id' => 'National ID Number',
     'form_national_id_placeholder' => 'Enter ID number',
     'form_job_info' => 'Job Information',
-    'form_position' => 'Desired Position',
+    'form_position' => 'Position',
     'form_select_position' => 'Select Position',
     'form_position_engineer' => 'Production Engineer',
     'form_position_technician' => 'Production Technician',
@@ -47,4 +47,5 @@ return [
     'form_terms_link' => 'Terms and Conditions',
     'form_terms_text' => 'of job application',
     'form_submit' => 'Submit Application',
+    'submit_success' => 'Your application has been submitted successfully.',
 ];
