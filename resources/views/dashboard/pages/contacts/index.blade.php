@@ -49,16 +49,23 @@
                                             </td>
                                             <td>{{ $contact->created_at->format('Y-m-d H:i') }}</td>
                                             <td>
-                                                <form action="{{ route('dashboard.contacts.destroy', $contact->id) }}" method="POST"
-                                                    class="d-inline"
-                                                    onsubmit="return confirm('Are you sure you want to delete this message?');">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-sm btn-danger">
-                                                        <i class="ti ti-trash me-1"></i>
-                                                        Delete
-                                                    </button>
-                                                </form>
+                                                <div class="d-flex gap-1">
+                                                    <a href="{{ route('dashboard.contacts.show', $contact) }}"
+                                                        class="btn btn-sm btn-label-primary">
+                                                        <i class="ti ti-eye me-1"></i>
+                                                        View
+                                                    </a>
+                                                    <form action="{{ route('dashboard.contacts.destroy', $contact->id) }}"
+                                                        method="POST" class="d-inline"
+                                                        onsubmit="return confirm('Are you sure you want to delete this message?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger">
+                                                            <i class="ti ti-trash me-1"></i>
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

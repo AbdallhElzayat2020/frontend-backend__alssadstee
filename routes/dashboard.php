@@ -21,6 +21,7 @@ Route::middleware(['auth'])->prefix('admin')->name('dashboard.')->group(function
 
     // Contacts Routes
     Route::get('/contacts', [ContactController::class, 'index'])->name('contacts.index');
+    Route::get('/contacts/{contact}', [ContactController::class, 'show'])->name('contacts.show');
     Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name('contacts.destroy');
 
     // Quotes Routes

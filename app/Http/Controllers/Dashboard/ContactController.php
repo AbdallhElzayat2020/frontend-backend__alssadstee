@@ -18,6 +18,14 @@ class ContactController extends Controller
     }
 
     /**
+     * Display the specified contact.
+     */
+    public function show(Contact $contact)
+    {
+        return view('dashboard.pages.contacts.show', compact('contact'));
+    }
+
+    /**
      * Remove the specified contact from storage.
      */
     public function destroy(Contact $contact)

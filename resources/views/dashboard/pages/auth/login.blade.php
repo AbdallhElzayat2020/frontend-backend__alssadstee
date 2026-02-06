@@ -63,12 +63,10 @@
                     <div class="card-body">
                         <!-- Logo -->
                         <div class="app-brand justify-content-center mb-4 mt-2">
-                            <a href="{{ route('home') }}" class="app-brand-link gap-2">
+                            <a href="javascript:void(0)" class="app-brand-link gap-2">
                                 <img src="{{ asset('assets/website/images/logo.png') }}" alt="Logo" width="250">
                             </a>
                         </div>
-                        <!-- /Logo -->
-                        <h4 class="mb-1 pt-2">Welcome to Admin Dashboard! 👋</h4>
 
                         <!-- Display Error Messages -->
                         @if ($errors->any())
