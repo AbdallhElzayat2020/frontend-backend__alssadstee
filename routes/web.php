@@ -21,10 +21,12 @@ Route::group(
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ],
+
     function () {
 
         /* ====================================================================================================================
         ==========================================================  Website Routes ============================================ */
+
         Route::get('/', [HomeController::class, 'index'])->name('home');
 
         Route::get('/about', [AboutController::class, 'index'])->name('about');
