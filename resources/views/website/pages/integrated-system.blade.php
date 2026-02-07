@@ -12,19 +12,17 @@
         </div>
     </section>
 
-    <!-- Section 1: Introduction -->
+    <!-- IMS Introduction -->
     <section class="about-content-section py-5">
         <div class="container">
             <div class="row align-items-center g-4">
-                <div class="col-md-6 order-md-2">
+                <div class="col-lg-6 order-lg-2">
                     <h2 class="about-section-title mb-4">{{ __('integrated-system.ims_title') }}</h2>
-                    <p class="about-section-text">
-                        {{ __('integrated-system.ims_description') }}
-                    </p>
+                    <p class="about-section-text mb-0">{{ __('integrated-system.ims_description') }}</p>
                 </div>
-                <div class="col-md-6 order-md-1">
+                <div class="col-lg-6 order-lg-1">
                     <div class="about-image-wrapper">
-                        <img src="{{asset('assets/website/images/about_section_1.jpg')}}" alt="نظام الإدارة المتكامل"
+                        <img src="{{ asset('assets/website/images/about_section_1.jpg') }}" alt="نظام الإدارة المتكامل"
                             class="img-fluid rounded-3" />
                     </div>
                 </div>
@@ -32,83 +30,53 @@
         </div>
     </section>
 
-    <!-- Section 2: Quality Management System -->
+    <!-- IMS Standards - Cards -->
     <section class="about-content-section py-5 bg-light">
         <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-md-6">
-                    <h2 class="about-section-title mb-4">{{ __('integrated-system.qms_title') }}</h2>
-                    <p class="about-section-text">
-                        {{ __('integrated-system.qms_description') }}
-                    </p>
+            <h3 class="about-section-title mb-4 text-center">{{ __('integrated-system.ims_includes') }}</h3>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="facilities-card" data-aos="fade-up" data-aos-duration="600">
+                        <div class="facilities-card-icon"><i class="fas fa-certificate"></i></div>
+                        <h3 class="facilities-card-title">{{ __('integrated-system.qms_title') }}</h3>
+                        <ul class="facilities-card-list">
+                            <li>{{ __('integrated-system.qms_1') }}</li>
+                            <li>{{ __('integrated-system.qms_2') }}</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="about-image-wrapper">
-                        <img src="{{asset('assets/website/images/about_section_2.jpg')}}" alt="نظام إدارة الجودة"
-                            class="img-fluid rounded-3" />
+                <div class="col-md-6 col-lg-3">
+                    <div class="facilities-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                        <div class="facilities-card-icon"><i class="fas fa-hard-hat"></i></div>
+                        <h3 class="facilities-card-title">{{ __('integrated-system.sms_title') }}</h3>
+                        <ul class="facilities-card-list">
+                            <li>{{ __('integrated-system.sms_1') }}</li>
+                            <li>{{ __('integrated-system.sms_2') }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="facilities-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                        <div class="facilities-card-icon"><i class="fas fa-leaf"></i></div>
+                        <h3 class="facilities-card-title">{{ __('integrated-system.ems_title') }}</h3>
+                        <ul class="facilities-card-list">
+                            <li>{{ __('integrated-system.ems_1') }}</li>
+                            <li>{{ __('integrated-system.ems_2') }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="facilities-card" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                        <div class="facilities-card-icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="facilities-card-title">{{ __('integrated-system.enms_title') }}</h3>
+                        <ul class="facilities-card-list">
+                            <li>{{ __('integrated-system.enms_1') }}</li>
+                            <li>{{ __('integrated-system.enms_2') }}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Environmental Management System -->
-    <section class="about-content-section py-5">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-md-6 order-md-2">
-                    <h2 class="about-section-title mb-4">{{ __('integrated-system.ems_title') }}</h2>
-                    <p class="about-section-text">
-                        {{ __('integrated-system.ems_description') }}
-                    </p>
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <div class="about-image-wrapper">
-                        <img src="{{asset('assets/website/images/about_section_3.jpg')}}" alt="نظام إدارة البيئة"
-                            class="img-fluid rounded-3" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 4: Safety Management System -->
-    <section class="about-content-section py-5 bg-light">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-md-6">
-                    <h2 class="about-section-title mb-4">{{ __('integrated-system.sms_title') }}</h2>
-                    <p class="about-section-text">
-                        {{ __('integrated-system.sms_description') }}
-                    </p>
-                </div>
-                <div class="col-md-6">
-                    <div class="about-image-wrapper">
-                        <img src="{{asset('assets/website/images/about_section_4.jpg')}}" alt="نظام إدارة السلامة"
-                            class="img-fluid rounded-3" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Energy Management System -->
-    <section class="about-content-section py-5">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-md-6 order-md-2">
-                    <h2 class="about-section-title mb-4">{{ __('integrated-system.enms_title') }}</h2>
-                    <p class="about-section-text">
-                        {{ __('integrated-system.enms_description') }}
-                    </p>
-                </div>
-                <div class="col-md-6 order-md-1">
-                    <div class="about-image-wrapper">
-                        <img src="{{asset('assets/website/images/about_section_1.jpg')}}" alt="نظام إدارة الطاقة"
-                            class="img-fluid rounded-3" />
-                    </div>
-                </div>
-            </div>
+            <p class="about-section-text text-center mt-5 mb-0">{{ __('integrated-system.ims_closing') }}</p>
         </div>
     </section>
 @endsection

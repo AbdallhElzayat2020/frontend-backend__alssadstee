@@ -2,14 +2,14 @@
 
 return [
     'hero_welcome' => 'Welcome to ALSSAD STEEL FOR INDUSTRY CO.',
-    'hero_company_name' => 'ALSSAD STEEL FOR INDUSTRY CO.',
+    'hero_company_name' => 'ALSSAD STEEL FOR INDUSTRY COMPANY.',
     'hero_description' => 'Where we manufacture quality that rises to the standards of the steel industry in the Kingdom.',
     'hero_more_about' => 'More About Us',
     'hero_video_not_supported' => 'Your browser does not support the video tag.',
     'about_title' => 'About Us',
-    'about_description_1' => 'ALSSAD STEEL FOR INDUSTRY CO. is one of the leading industrial companies specialized in manufacturing reinforcing steel bars in accordance with the highest locally and internationally approved standards.',
-    'about_description_2' => 'We adopt advanced production technologies and an integrated industrial value chain that ensures the highest levels of quality and reliability.',
-    'about_description_3' => 'Our products are characterized by high tensile strength, consistent mechanical properties, and strict compliance with local and international standards.',
+    'about_description_1' => 'ALSSAD STEEL FOR INDUSTRY CO. is one of the leading industrial companies specialized in the manufacturing of reinforcing steel bars in accordance with the highest locally and internationally approved technical and engineering standards. The company is a member of the National Committee for the Steel Industry. Since its establishment, the company has worked to strengthen its position as a trusted entity in the steel and iron sector by adopting advanced production technologies and building a complete, integrated industrial value chain that ensures the highest levels of quality and reliability.',
+    'about_description_2' => 'We possess advanced industrial infrastructure managed by highly experienced professionals in heavy industries.',
+    'about_description_3' => 'This enables us to produce reinforcing steel characterized by high tensile strength, consistent mechanical properties, and strict compliance with local and international standards, making our products the preferred choice for major construction and infrastructure projects.',
     'about_discover_products' => 'Discover Our Products',
     'quality_title' => 'Quality and Certificates',
     'quality_description' => 'We place quality at the forefront of our priorities from premium raw material selection through production, inspection, and storage, with full compliance to SASO ASTM 615 and ISO systems (9001 / 45001 / 14001 / 50001).',

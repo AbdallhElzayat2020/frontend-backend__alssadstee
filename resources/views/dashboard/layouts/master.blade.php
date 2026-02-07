@@ -24,7 +24,7 @@
                 <!-- / Navbar -->
 
                 <!-- Content wrapper -->
-                <div class="content-wrapper">
+                <div class="content-wrapper @yield('contentWrapperClass')">
                     <!-- Content -->
 
                     <div class="container-xxl flex-grow-1 container-p-y">

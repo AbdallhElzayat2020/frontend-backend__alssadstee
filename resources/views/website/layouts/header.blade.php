@@ -70,7 +70,7 @@
                 <li class="nav-item dropdown">
                     <div class="dropdown">
                         @php
-                            $flagSrc = app()->getLocale() === 'ar' ? 'https://flagcdn.com/ae.svg' : 'https://flagcdn.com/gb.svg';
+                            $flagSrc = app()->getLocale() === 'ar' ? 'https://flagcdn.com/sa.svg' : 'https://flagcdn.com/gb.svg';
                         @endphp
                         <button id="langBtn"
                             class="btn btn-ghost dropdown-toggle d-flex align-items-center gap-2 nav-link"
@@ -82,7 +82,7 @@
                         <ul class="dropdown-menu dropdown-menu-end shadow-sm">
                             @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                                 @php
-                                    $itemFlagSrc = $localeCode === 'ar' ? 'https://flagcdn.com/ae.svg' : 'https://flagcdn.com/gb.svg';
+                                    $itemFlagSrc = $localeCode === 'ar' ? 'https://flagcdn.com/sa.svg' : 'https://flagcdn.com/gb.svg';
                                 @endphp
                                 <li>
                                     <a class="dropdown-item lang-switch d-flex align-items-center gap-2" rel="alternate"

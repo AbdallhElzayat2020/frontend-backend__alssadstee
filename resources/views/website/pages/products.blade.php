@@ -25,30 +25,33 @@
 
             <div class="row g-4">
                 @forelse ($products as $product)
-                    <div class="col-md-4">
-                        <div class="card shadow-sm border-0 overflow-hidden product-card h-100">
-                            @if ($product->image)
-                                <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid"
-                                    alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
-                            @else
-                                <img src="{{ asset('assets/website/images/product_2.png') }}" class="img-fluid" alt="product">
-                            @endif
-                            <div class="p-3">
-                                <h3 class="product-title mb-2">
-                                    <a class="product-link" href="{{ route('products.show', $product->slug) }}">
+                    <div class="col-md-6 col-lg-4">
+                        <a href="{{ route('products.show', $product->slug) }}"
+                            class="product-card-link text-decoration-none d-block h-100">
+                            <div class="card shadow-sm border-0 overflow-hidden product-card h-100">
+                                <div class="product-card-image">
+                                    @if ($product->image)
+                                        <img src="{{ asset('storage/' . $product->image) }}"
+                                            alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
+                                    @else
+                                        <img src="{{ asset('assets/website/images/product_2.png') }}" alt="product">
+                                    @endif
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="product-title mb-2">
                                         {{ $product->getTranslation('name', app()->getLocale()) }}
-                                    </a>
-                                </h3>
-                                @php
-                                    $description = $product->getTranslation('description', app()->getLocale());
-                                @endphp
-                                @if ($description)
-                                    <p class="text-muted mb-0">
-                                        {{ \Illuminate\Support\Str::limit($description, 150) }}
-                                    </p>
-                                @endif
+                                    </h3>
+                                    @php
+                                        $description = $product->getTranslation('description', app()->getLocale());
+                                    @endphp
+                                    @if ($description)
+                                        <p class="text-muted mb-0 product-desc-preview">
+                                            {{ \Illuminate\Support\Str::limit(strip_tags($description), 120) }}
+                                        </p>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @empty
                     <div class="col-12">

@@ -1,10 +1,11 @@
 @extends('dashboard.layouts.master')
 @section('title', 'Add Product')
+@section('contentWrapperClass', 'content-wrapper-overflow-visible')
 
 @section('content')
     <div class="row">
         <div class="col-12">
-            <div class="card">
+            <div class="card products-form-card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Add Product</h5>
                 </div>

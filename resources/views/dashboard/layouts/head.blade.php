@@ -50,14 +50,18 @@
             direction: ltr !important;
         }
 
-        /* Summernote dropdown fixes */
+        /* Summernote dropdown fixes - high z-index for navbar/fixed layout */
         .note-dropdown-menu {
-            z-index: 9999 !important;
+            z-index: 99999 !important;
             position: absolute !important;
         }
 
         .note-popover {
-            z-index: 9998 !important;
+            z-index: 99998 !important;
+        }
+
+        .note-modal {
+            z-index: 99999 !important;
         }
 
         .note-editor.note-frame {
@@ -65,7 +69,7 @@
         }
 
         .note-dropdown-menu .dropdown-item {
-            padding: 0.25rem 1rem;
+            padding: 0.35rem 1rem;
             font-size: 0.875rem;
         }
 
@@ -85,60 +89,21 @@
             border-left: 0.3em solid transparent;
         }
 
-        /* Additional Summernote dropdown fixes */
-        .note-dropdown-menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 1000;
-            float: left;
-            min-width: 160px;
-            padding: 5px 0;
-            margin: 2px 0 0;
-            list-style: none;
-            font-size: 14px;
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            border: 1px solid rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-            -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
-            background-clip: padding-box;
-        }
-
         .note-dropdown-menu.open {
-            display: block;
-        }
-
-        .note-dropdown-menu>li>a {
-            display: block;
-            padding: 3px 20px;
-            clear: both;
-            font-weight: normal;
-            line-height: 1.42857143;
-            color: #333;
-            white-space: nowrap;
-        }
-
-        .note-dropdown-menu>li>a:hover,
-        .note-dropdown-menu>li>a:focus {
-            color: #262626;
-            text-decoration: none;
-            background-color: #f5f5f5;
+            display: block !important;
         }
 
         .note-btn-group.open .note-dropdown-menu {
-            display: block;
+            display: block !important;
         }
 
-        .note-btn-group.open .dropdown-toggle {
-            outline: 0;
+        /* Products form - allow Summernote dropdown to show */
+        .content-wrapper-overflow-visible {
+            overflow: visible !important;
         }
 
-        .note-btn-group.open .dropdown-toggle {
-            -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-            box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        .products-form-card .card-body {
+            overflow: visible !important;
         }
     </style>
     @stack('css')

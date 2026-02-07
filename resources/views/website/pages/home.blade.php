@@ -34,7 +34,6 @@
                     <p class="text-intro mt-2">
                         {{ __('home.about_description_1') }}
                     </p>
-                    <br>
                     <p class="text-intro mt-2">
                         {{ __('home.about_description_2') }}
                     </p>
@@ -181,30 +180,33 @@
 
             <div class="row g-4">
                 @forelse ($products as $product)
-                    <div class="col-md-4">
-                        <div class="card shadow-sm border-0 overflow-hidden product-card h-100">
-                            @if ($product->image)
-                                <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid"
-                                    alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
-                            @else
-                                <img src="{{ asset('assets/website/images/product_2.png') }}" class="img-fluid" alt="product">
-                            @endif
-                            <div class="p-3">
-                                <h3 class="product-title mb-2">
-                                    <a class="product-link" href="{{ route('products.show', $product->slug) }}">
+                    <div class="col-md-6 col-lg-4">
+                        <a href="{{ route('products.show', $product->slug) }}"
+                            class="product-card-link text-decoration-none d-block h-100">
+                            <div class="card shadow-sm border-0 overflow-hidden product-card h-100">
+                                <div class="product-card-image">
+                                    @if ($product->image)
+                                        <img src="{{ asset('storage/' . $product->image) }}"
+                                            alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
+                                    @else
+                                        <img src="{{ asset('assets/website/images/product_2.png') }}" alt="product">
+                                    @endif
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="product-title mb-2">
                                         {{ $product->getTranslation('name', app()->getLocale()) }}
-                                    </a>
-                                </h3>
-                                @php
-                                    $description = $product->getTranslation('description', app()->getLocale());
-                                @endphp
-                                @if ($description)
-                                    <p class="text-muted mb-0">
-                                        {{ \Illuminate\Support\Str::limit($description, 120) }}
-                                    </p>
-                                @endif
+                                    </h3>
+                                    @php
+                                        $description = $product->getTranslation('description', app()->getLocale());
+                                    @endphp
+                                    @if ($description)
+                                        <p class="text-muted mb-0 product-desc-preview">
+                                            {{ \Illuminate\Support\Str::limit(strip_tags($description), 120) }}
+                                        </p>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @empty
                     <div class="col-12">
@@ -222,43 +224,6 @@
         </div>
     </section>
     <!-- Projects Section -->
-
-
-    <section id="sustainability" class="sustainability-section py-5 light_background">
-        <div class="container">
-            <div class="row justify-content-between gy-4">
-
-                <div class="col-lg-6">
-                    <h2 class="section-title mb-5 sustainability-title">{{ __('home.sustainability_title') }}</h2>
-                    <p class="sustainability-text mb-3">
-                        {{ __('home.sustainability_description_1') }}
-                    </p>
-                    <p class="sustainability-text mb-3">
-                        {{ __('home.sustainability_description_2') }}
-                    </p>
-                    <h3 class="sustainability-subtitle mt-4">{{ __('home.sustainability_environmental_responsibility') }}
-                    </h3>
-                    <p class="sustainability-text mb-3">
-                        {{ __('home.sustainability_description_3') }}
-                    </p>
-                    <p class="sustainability-text mb-3">
-                        {{ __('home.sustainability_description_4') }}
-                    </p>
-                    <a href="#about" class="btn btn-primary btn-lg rounded-4">{{ __('home.sustainability_more_about') }}</a>
-
-                </div>
-
-                <div class="col-lg-5">
-                    <div class="sustainability-image rounded-4 overflow-hidden">
-                        <img src="{{asset('assets/website/images/sustainability.png')}}" alt="عامل يحمل قضبان حديد"
-                            class="img-fluid" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End Quality Section -->
-
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section py-5">
