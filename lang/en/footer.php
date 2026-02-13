@@ -12,7 +12,7 @@ return [
     'phone_label' => 'Phone',
     'email_label' => 'Email',
     'address' => 'Saudi Arabia | Riyadh | 2nd Industrial City',
-    'phone' => '920002267',
-    'email' => 'Info@Alssadsteel.Com',
-    'copyright' => 'All rights reserved ©2025 Alssad Steel For Industry Co.',
+    'phone' => '0114997471',
+    'email' => 'info@alssadsteel.com',
+    'copyright' => 'All rights reserved ©:year Alssad Steel For Industry Co.',
 ];

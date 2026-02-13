@@ -24,7 +24,7 @@
             <div class="product-detail-wrapper">
                 <div class="product-detail-image-wrap" data-aos="fade-up" data-aos-duration="600">
                     @if ($product->image)
-                        <img src="{{ asset('storage/' . $product->image) }}"
+                        <img src="{{ asset($product->image) }}"
                             alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
                     @else
                         <img src="{{ asset('assets/website/images/product_2.png') }}" alt="product">

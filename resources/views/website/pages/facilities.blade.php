@@ -72,10 +72,10 @@
             <div class="row g-4 mt-5" id="facilitiesGallery">
                 <div class="col-md-6">
                     <div class="facilities-image-item media-gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
-                        data-image="{{ asset('assets/website/images/about_section_1.jpg') }}"
+                        data-image="{{ asset('assets/website/images/gallery_1.jpeg') }}"
                         data-title="{{ __('facilities.image_1_title') }}" data-index="0">
                         <div class="about-image-wrapper">
-                            <img src="{{ asset('assets/website/images/about_section_1.jpg') }}"
+                            <img src="{{ asset('assets/website/images/gallery_1.jpeg') }}"
                                 alt="{{ __('facilities.image_1_title') }}" class="img-fluid rounded-3" />
                             <div class="facilities-image-overlay">
                                 <i class="fas fa-search-plus"></i>
@@ -85,10 +85,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="facilities-image-item media-gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
-                        data-image="{{ asset('assets/website/images/about_section_2.jpg') }}"
+                        data-image="{{ asset('assets/website/images/gallery_2.jpeg') }}"
                         data-title="{{ __('facilities.image_2_title') }}" data-index="1">
                         <div class="about-image-wrapper">
-                            <img src="{{ asset('assets/website/images/about_section_2.jpg') }}"
+                            <img src="{{ asset('assets/website/images/gallery_2.jpeg') }}"
                                 alt="{{ __('facilities.image_2_title') }}" class="img-fluid rounded-3" />
                             <div class="facilities-image-overlay">
                                 <i class="fas fa-search-plus"></i>
@@ -98,10 +98,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="facilities-image-item media-gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
-                        data-image="{{ asset('assets/website/images/about_section_3.jpg') }}"
+                        data-image="{{ asset('assets/website/images/gallery_3.jpeg') }}"
                         data-title="{{ __('facilities.image_3_title') }}" data-index="2">
                         <div class="about-image-wrapper">
-                            <img src="{{ asset('assets/website/images/about_section_3.jpg') }}"
+                            <img src="{{ asset('assets/website/images/gallery_3.jpeg') }}"
                                 alt="{{ __('facilities.image_3_title') }}" class="img-fluid rounded-3" />
                             <div class="facilities-image-overlay">
                                 <i class="fas fa-search-plus"></i>
@@ -111,10 +111,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="facilities-image-item media-gallery-item" data-bs-toggle="modal" data-bs-target="#imageModal"
-                        data-image="{{ asset('assets/website/images/about_section_4.jpg') }}"
+                        data-image="{{ asset('assets/website/images/gallery_4.jpeg') }}"
                         data-title="{{ __('facilities.image_4_title') }}" data-index="3">
                         <div class="about-image-wrapper">
-                            <img src="{{ asset('assets/website/images/about_section_4.jpg') }}"
+                            <img src="{{ asset('assets/website/images/gallery_4.jpeg') }}"
                                 alt="{{ __('facilities.image_4_title') }}" class="img-fluid rounded-3" />
                             <div class="facilities-image-overlay">
                                 <i class="fas fa-search-plus"></i>

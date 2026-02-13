@@ -21,8 +21,8 @@
                     <p class="about-section-text mb-0">{{ __('integrated-system.ims_description') }}</p>
                 </div>
                 <div class="col-lg-6 order-lg-1">
-                    <div class="about-image-wrapper">
-                        <img src="{{ asset('assets/website/images/about_section_1.jpg') }}" alt="نظام الإدارة المتكامل"
+                    <div class="about-image-wrapper ims-image-wrapper">
+                        <img src="{{ asset('assets/website/images/integrated-system.jpeg') }}" alt="نظام الإدارة المتكامل"
                             class="img-fluid rounded-3" />
                     </div>
                 </div>

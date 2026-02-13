@@ -7,7 +7,7 @@ return [
     'contact_info_phone' => 'Phone Number',
     'contact_info_address' => 'Address',
     'contact_info_working_hours' => 'Working Hours',
-    'contact_info_working_hours_value' => 'Sunday - Thursday: 8:00 AM - 5:00 PM<br>Friday - Saturday: Closed',
+    'contact_info_working_hours_value' => 'Sunday - Thursday: 7:30 AM - 4:30 PM<br>Friday - Saturday: Closed',
     'contact_info_follow_us' => 'Follow Us',
     'form_title' => 'Send Us a Message',
     'form_name' => 'Name',

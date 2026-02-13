@@ -7,7 +7,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -29,8 +29,15 @@ class ProductController extends Controller
         $product->setTranslations('name', $data['name']);
         $product->setTranslations('description', $data['description'] ?? []);
         $product->slug = !empty($data['slug']) ? $data['slug'] : Product::generateUniqueSlug($data['name']['en']);
+
         if ($request->hasFile('image')) {
-            $product->image = $request->file('image')->store('products', 'public');
+            if (!File::exists(public_path('products'))) {
+                File::makeDirectory(public_path('products'), 0755, true);
+            }
+
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('products'), $filename);
+            $product->image = 'products/' . $filename;
         }
         $product->save();
         return redirect()->route('dashboard.products.index')->with('success', 'Product created successfully');
@@ -52,10 +59,17 @@ class ProductController extends Controller
             $product->slug = $data['slug'];
         }
         if ($request->hasFile('image')) {
-            if ($product->image) {
-                Storage::disk('public')->delete($product->image);
+            if ($product->image && File::exists(public_path($product->image))) {
+                File::delete(public_path($product->image));
             }
-            $product->image = $request->file('image')->store('products', 'public');
+
+            if (!File::exists(public_path('products'))) {
+                File::makeDirectory(public_path('products'), 0755, true);
+            }
+
+            $filename = time() . '_' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('products'), $filename);
+            $product->image = 'products/' . $filename;
         }
         $product->save();
         return redirect()->route('dashboard.products.index')->with('success', 'Product updated successfully');
@@ -64,7 +78,9 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         if ($product->image) {
-            Storage::disk('public')->delete($product->image);
+            if (File::exists(public_path($product->image))) {
+                File::delete(public_path($product->image));
+            }
         }
         $product->delete();
         return redirect()->route('dashboard.products.index')->with('success', 'Product deleted successfully');

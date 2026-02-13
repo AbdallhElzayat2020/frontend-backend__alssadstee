@@ -28,8 +28,8 @@
                             </div>
                             <div class="contact-details">
                                 <h5 class="contact-label">{{ __('contact-us.contact_info_email') }}</h5>
-                                <a href="mailto:Info@Alssadsteel.Com" class="contact-value">
-                                    Info@Alssadsteel.Com
+                                <a href="mailto:info@alssadsteel.com" class="contact-value">
+                                    info@alssadsteel.com
                                 </a>
                             </div>
                         </div>
@@ -40,8 +40,8 @@
                             </div>
                             <div class="contact-details">
                                 <h5 class="contact-label">{{ __('contact-us.contact_info_phone') }}</h5>
-                                <a href="tel:920002267" class="contact-value">
-                                    920002267
+                                <a href="tel:0114997471" class="contact-value">
+                                    0114997471
                                 </a>
                             </div>
                         </div>
@@ -73,13 +73,20 @@
                         <div class="social-media-section mt-4 pt-4 border-top">
                             <h5 class="mb-3">{{ __('contact-us.contact_info_follow_us') }}</h5>
                             <div class="social-icons-contact d-flex gap-3">
-                                <a href="#" class="social-icon-contact" title="LinkedIn">
+                                <a href="https://www.linkedin.com/company/alssad-steel/" target="_blank"
+                                    class="social-icon-contact" title="LinkedIn">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#" class="social-icon-contact" title="Instagram">
+                                <a href="https://www.instagram.com/alssadsteel?igsh=OGw1ZnFhN2s4ejcw&utm_source=qr"
+                                    target="_blank" class="social-icon-contact" title="Instagram">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" class="social-icon-contact" title="Facebook">
+                                <a href="https://x.com/alssadsteel?s=21" target="_blank" class="social-icon-contact"
+                                    title="X">
+                                    <i class="fab fa-x-twitter"></i>
+                                </a>
+                                <a href="https://www.facebook.com/share/1DY3tkYtmT/?mibextid=wwXIfr" target="_blank"
+                                    class="social-icon-contact" title="Facebook">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
                             </div>
@@ -167,7 +174,7 @@
                     <!-- Google Maps -->
                     <div class="map-container rounded-4 overflow-hidden shadow-lg">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5!2d46.7!3d24.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDM2JzAwLjAiTiA0NsKwNDInMDAuMCJF!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.56279777618!2d46.8713652!3d24.5697661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f99056eba0d57%3A0x31bc164e0f7cfb6f!2sAlssad%20Steel%20For%20Industry%20Co.!5e0!3m2!1sen!2s!4v1770722180075!5m2!1sen!2s"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>

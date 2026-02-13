@@ -1053,6 +1053,12 @@ footer .social-icons a:hover {
     margin-bottom: 1rem;
 }
 
+[dir="rtl"] .about-story-hero-text {
+    direction: rtl;
+    text-align: justify;
+    text-align-last: justify;
+}
+
 .about-story-divider {
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.15), transparent);
@@ -1339,6 +1345,16 @@ footer .social-icons a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Integrated System page image - show full graphic without cropping */
+.ims-image-wrapper {
+    height: auto;
+}
+
+.ims-image-wrapper img {
+    height: auto;
+    object-fit: contain;
 }
 
 /* Facilities Section */
@@ -2316,5 +2332,18 @@ footer .social-icons a:hover {
     .facilities-image-item .about-image-wrapper {
         aspect-ratio: 4/3;
         height: auto;
+    }
+
+    /* Ensure IMS image looks correct on mobile */
+    .ims-image-wrapper {
+        height: auto;
+        max-width: 100%;
+        margin-top: 1.5rem;
+    }
+
+    .ims-image-wrapper img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
     }
 }

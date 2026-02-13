@@ -58,7 +58,7 @@
                 @if($product->image)
                     <div class="col-md-6 col-lg-4">
                         <label class="form-label d-block">Current Image</label>
-                        <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}"
+                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}"
                             class="img-fluid rounded border" style="max-height: 180px; object-fit: cover;" />
                     </div>
                 @endif

@@ -4,7 +4,7 @@ return [
     'home' => 'Home',
     'about' => 'About Us',
     'important_pages' => 'Pages',
-    'facilities' => 'Facilities',
+    'facilities' => 'Operations',
     'faqs' => 'FAQs',
     'integrated_system' => 'Integrated System',
     'media' => 'Media',

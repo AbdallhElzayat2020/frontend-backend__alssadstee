@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div class="card shadow-sm border-0 overflow-hidden">
-                        <img src="{{asset('assets/website/images/about.jpg')}}" class="img-fluid" alt="عمال في المصنع"
+                        <img src="{{asset('assets/website/images/about_us.jpeg')}}" class="img-fluid" alt="عمال في المصنع"
                             data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" />
                     </div>
                 </div>
@@ -62,7 +62,7 @@
 
                 <div class="col-md-6 mb-4 mb-md-0">
                     <div class="card shadow-sm border-0 overflow-hidden">
-                        <img src="{{asset('assets/website/images/quality.jpg')}}" class="img-fluid" alt="عمال في المصنع"
+                        <img src="{{asset('assets/website/images/quality_page.jpeg')}}" class="img-fluid" alt="ع"
                             data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" />
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                             <div class="card shadow-sm border-0 overflow-hidden product-card h-100">
                                 <div class="product-card-image">
                                     @if ($product->image)
-                                        <img src="{{ asset('storage/' . $product->image) }}"
+                                        <img src="{{ asset($product->image) }}"
                                             alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
                                     @else
                                         <img src="{{ asset('assets/website/images/product_2.png') }}" alt="product">
@@ -233,13 +233,13 @@
                 <div class="col-lg-6">
                     <div class="map-container mb-4 rounded-3 overflow-hidden shadow-lg">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5!2d46.7!3d24.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDM2JzAwLjAiTiA0NsKwNDInMDAuMCJF!5e0!3m2!1sen!2s!4v1234567890!5m2!1sen!2s"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.56279777618!2d46.8713652!3d24.5697661!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f99056eba0d57%3A0x31bc164e0f7cfb6f!2sAlssad%20Steel%20For%20Industry%20Co.!5e0!3m2!1sen!2s!4v1770722180075!5m2!1sen!2s"
                             width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    <div class="contact-info text-white">
-                        <p class="mb-2"><strong>{{ __('home.contact_email') }}</strong> Info@Alssadsteel.Com</p>
-                        <p class="mb-2"><strong>{{ __('home.contact_phone') }}</strong> 920002267</p>
+                    <div class="contact-info text-dark">
+                        <p class="mb-2"><strong>{{ __('home.contact_email') }}</strong> info@alssadsteel.com</p>
+                        <p class="mb-2"><strong>{{ __('home.contact_phone') }}</strong> 0114997471</p>
                         <p class="mb-0"><strong>{{ __('home.contact_address') }}</strong> Saudi Arabia | Riyadh | 2nd
                             Industrial City</p>
                     </div>

@@ -7,7 +7,7 @@ return [
     'contact_info_phone' => 'رقم الهاتف',
     'contact_info_address' => 'العنوان',
     'contact_info_working_hours' => 'ساعات العمل',
-    'contact_info_working_hours_value' => 'الأحد - الخميس: 8:00 ص - 5:00 م<br>الجمعة - السبت: مغلق',
+    'contact_info_working_hours_value' => 'الأحد - الخميس: 7:30 ص - 4:30 م<br>الجمعة - السبت: مغلق',
     'contact_info_follow_us' => 'تابعنا على',
     'form_title' => 'أرسل لنا رسالة',
     'form_name' => 'الاسم',

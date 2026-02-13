@@ -12,7 +12,7 @@ return [
     'phone_label' => 'رقم الهاتف',
     'email_label' => 'الايميل',
     'address' => 'Saudi Arabia | Riyadh | 2nd Industrial City',
-    'phone' => '920002267',
-    'email' => 'Info@Alssadsteel.Com',
-    'copyright' => 'جميع الحقوق محفوظة ©2025 لدى شركة حديد السد للصناعة',
+    'phone' => '0114997471',
+    'email' => 'info@alssadsteel.com',
+    'copyright' => 'جميع الحقوق محفوظة © :year لدى شركة حديد السد للصناعة',
 ];

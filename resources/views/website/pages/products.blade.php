@@ -31,7 +31,7 @@
                             <div class="card shadow-sm border-0 overflow-hidden product-card h-100">
                                 <div class="product-card-image">
                                     @if ($product->image)
-                                        <img src="{{ asset('storage/' . $product->image) }}"
+                                        <img src="{{ asset($product->image) }}"
                                             alt="{{ $product->getTranslation('name', app()->getLocale()) }}">
                                     @else
                                         <img src="{{ asset('assets/website/images/product_2.png') }}" alt="product">

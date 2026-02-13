@@ -130,7 +130,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="about-image-wrapper">
-                        <img src="{{asset('assets/website/images/about_section_4.jpg')}}" alt="عامل يعمل على هيكل معدني"
+                        <img src="{{asset('assets/website/images/qeyamin_sec.jpeg')}}" alt="عامل يعمل على هيكل معدني"
                             class="img-fluid rounded-3" />
                     </div>
                 </div>

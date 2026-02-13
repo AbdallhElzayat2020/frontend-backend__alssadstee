@@ -18,13 +18,17 @@
         </div>
 
         <div class="social-icons my-3">
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.linkedin.com/company/alssad-steel/" target="_blank"><i
+                    class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/alssadsteel?igsh=OGw1ZnFhN2s4ejcw&utm_source=qr" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <a href="https://x.com/alssadsteel?s=21" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.facebook.com/share/1DY3tkYtmT/?mibextid=wwXIfr" target="_blank"><i
+                    class="fa-brands fa-facebook-f"></i></a>
         </div>
     </div>
 
     <div class="footer-bottom">
-        <p class="mb-0">{{ __('footer.copyright') }}</p>
+        <p class="mb-0">{{ str_replace(':year', date('Y'), __('footer.copyright')) }}</p>
     </div>
 </footer>

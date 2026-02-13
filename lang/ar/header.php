@@ -4,7 +4,7 @@ return [
     'home' => 'الرئيسية',
     'about' => 'من نحن',
     'important_pages' => 'أهم الصفحات',
-    'facilities' => 'المرافق والعمليات',
+    'facilities' => 'العمليات',
     'faqs' => 'الأسئلة الشائعة',
     'integrated_system' => 'نظام الإدارة المتكامل',
     'media' => 'الوسائط',

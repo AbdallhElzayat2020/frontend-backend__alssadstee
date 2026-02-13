@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'hero_welcome' => 'Welcome to ALSSAD STEEL FOR INDUSTRY CO.',
+    'hero_welcome' => 'Welcome to',
     'hero_company_name' => 'ALSSAD STEEL FOR INDUSTRY COMPANY.',
     'hero_description' => 'Where we manufacture quality that rises to the standards of the steel industry in the Kingdom.',
     'hero_more_about' => 'More About Us',
@@ -12,7 +12,7 @@ return [
     'about_description_3' => 'This enables us to produce reinforcing steel characterized by high tensile strength, consistent mechanical properties, and strict compliance with local and international standards, making our products the preferred choice for major construction and infrastructure projects.',
     'about_discover_products' => 'Discover Our Products',
     'quality_title' => 'Quality and Certificates',
-    'quality_description' => 'We place quality at the forefront of our priorities from premium raw material selection through production, inspection, and storage, with full compliance to SASO ASTM 615 and ISO systems (9001 / 45001 / 14001 / 50001).',
+    'quality_description' => 'We place quality at the forefront of our priorities from premium raw material selection through production, inspection, and storage, with full compliance to SASO ASTM 615 and ISO systems ISO 9001, ISO 45001, ISO 14001, ISO 50001.',
     'quality_discover_products' => 'Discover Our Products',
     'certificates_title' => 'Quality Certificates',
     'certificates_subtitle' => 'We are proud to have obtained international accreditation certificates that prove our commitment to the highest standards of quality and safety in all our products.',

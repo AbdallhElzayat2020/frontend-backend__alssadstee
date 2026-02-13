@@ -37,7 +37,7 @@
                                         <tr>
                                             <td>
                                                 @if ($product->image)
-                                                    <img src="{{ asset('storage/' . $product->image) }}"
+                                                    <img src="{{ asset($product->image) }}"
                                                         alt="{{ $product->getTranslation('name', 'en') }}" width="56"
                                                         height="56" class="rounded" style="object-fit: cover;">
                                                 @else

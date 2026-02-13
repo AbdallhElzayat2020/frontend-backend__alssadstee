@@ -1,11 +1,11 @@
 <div class="floating-buttons">
 
-    <a href="https://wa.me/0123456789" target="_blank" class="btn floating-btn whatsapp-btn rounded-circle mb-2"
+    <a href="https://wa.me/966533893288" target="_blank" class="btn floating-btn whatsapp-btn rounded-circle mb-2"
        title="واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <a href="tel:+0123456789" class="btn floating-btn phone-btn rounded-circle" title="اتصال">
+    <a href="tel:0114997471" class="btn floating-btn phone-btn rounded-circle" title="اتصال">
         <i class="fas fa-phone"></i>
     </a>
 
