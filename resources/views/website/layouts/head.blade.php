@@ -1,16 +1,17 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="u_xIwmfO0-bubl7Nu3mYCpNFSmdQr2J1g8WsBb2LHWk" />
     <title>
         @yield('title')
     </title>
     <link rel="icon" href="{{asset('assets/website/images/favicon.png')}}" type="image/x-icon">
     @php
-        $currentLocale = LaravelLocalization::getCurrentLocale();
-        $isRTL = $currentLocale === 'ar';
-        $bootstrapCSS = $isRTL
-            ? 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css'
-            : 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
+$currentLocale = LaravelLocalization::getCurrentLocale();
+$isRTL = $currentLocale === 'ar';
+$bootstrapCSS = $isRTL
+    ? 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css'
+    : 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css';
     @endphp
     <link href="{{ $bootstrapCSS }}" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
