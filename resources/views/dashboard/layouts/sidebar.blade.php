@@ -55,5 +55,38 @@
             </a>
         </li>
 
+        <li class="menu-item {{ request()->routeIs('dashboard.page-seo.*') ? 'active' : '' }}">
+            <a href="{{ route('dashboard.page-seo.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-tags"></i>
+                <div data-i18n="Website SEO">Website pages SEO</div>
+            </a>
+        </li>
+
+        <li class="menu-item {{ request()->routeIs('dashboard.url-redirects.*') ? 'active' : '' }}">
+            <a href="{{ route('dashboard.url-redirects.index') }}" class="menu-link">
+                <i class="menu-icon tf-icons ti ti-arrow-forward-up"></i>
+                <div data-i18n="URL Redirects">URL redirects</div>
+            </a>
+        </li>
+
+        <li class="menu-item {{ request()->routeIs('dashboard.blogs.*', 'dashboard.blog-categories.*') ? 'active open' : '' }}">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons ti ti-news"></i>
+                <div data-i18n="Blog">Blog</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item {{ request()->routeIs('dashboard.blogs.*') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.blogs.index') }}" class="menu-link">
+                        <div data-i18n="Posts">Posts</div>
+                    </a>
+                </li>
+                <li class="menu-item {{ request()->routeIs('dashboard.blog-categories.*') ? 'active' : '' }}">
+                    <a href="{{ route('dashboard.blog-categories.index') }}" class="menu-link">
+                        <div data-i18n="Categories">Categories</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
     </ul>
 </aside>

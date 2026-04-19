@@ -2,12 +2,16 @@
 
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\Auth\LoginController;
+use App\Http\Controllers\Dashboard\BlogCategoryController;
+use App\Http\Controllers\Dashboard\BlogController;
 use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Dashboard\QuoteController;
 use App\Http\Controllers\Dashboard\JobAppliedController;
 use App\Http\Controllers\Dashboard\FaqController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\ProductController;
+use App\Http\Controllers\Dashboard\StaticPageSeoController;
+use App\Http\Controllers\Dashboard\UrlRedirectController;
 use Illuminate\Support\Facades\Route;
 
 /* Public Routes Dashboard - Auth */
@@ -39,6 +43,19 @@ Route::middleware(['auth'])->prefix('admin')->name('dashboard.')->group(function
 
     // Products Routes
     Route::resource('products', ProductController::class)->except(['show']);
+
+    // Static website pages SEO
+    Route::get('/page-seo', [StaticPageSeoController::class, 'index'])->name('page-seo.index');
+    Route::get('/page-seo/{static_page_seo}/edit', [StaticPageSeoController::class, 'edit'])->name('page-seo.edit');
+    Route::put('/page-seo/{static_page_seo}', [StaticPageSeoController::class, 'update'])->name('page-seo.update');
+
+    Route::resource('url-redirects', UrlRedirectController::class)->except(['show']);
+
+    // Blog Categories
+    Route::resource('blog-categories', BlogCategoryController::class)->except(['show']);
+
+    // Blog Posts
+    Route::resource('blogs', BlogController::class)->except(['show']);
 
     // Profile Routes
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');

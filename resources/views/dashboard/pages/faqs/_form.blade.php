@@ -58,6 +58,8 @@
             <div class="invalid-feedback">{{ $message }}</div>
         @enderror
     </div>
+
+    @include('dashboard.components.seo_fields', ['seoModel' => $faq ?? null])
 </div>
 
 <div class="mt-4 d-flex gap-2">

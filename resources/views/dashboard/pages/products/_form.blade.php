@@ -25,6 +25,17 @@
     </div>
 
     <div class="col-12">
+        <label class="form-label" for="slug">Product URL slug (English only)</label>
+        <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror"
+            value="{{ old('slug', isset($product) ? $product->slug : '') }}"
+            placeholder="round-bar-steel" />
+        <div class="form-text">Same path for Arabic and English, e.g. <code>/ar/products/round-bar-steel</code></div>
+        @error('slug')
+            <div class="invalid-feedback">{{ $message }}</div>
+        @enderror
+    </div>
+
+    <div class="col-12">
         <label class="form-label" for="description_en">Description (English)</label>
         <textarea id="description_en" name="description[en]" rows="6"
             class="form-control @error('description.en') is-invalid @enderror"
@@ -65,6 +76,8 @@
             @endisset
         </div>
     </div>
+
+    @include('dashboard.components.seo_fields', ['seoModel' => $product ?? null])
 </div>
 
 <div class="d-flex gap-2 mt-4">
@@ -81,11 +94,11 @@
     .products-form-card .row {
         overflow: visible !important;
     }
-    .note-editor {
-        overflow: visible !important;
-    }
-    .note-toolbar {
-        z-index: 2;
+    .note-editor { overflow: visible !important; }
+    .note-toolbar { z-index: 2; }
+    .note-editor .note-dropdown-menu,
+    .note-editor .dropdown-menu {
+        z-index: 99999 !important;
     }
 </style>
 @endpush
@@ -94,16 +107,22 @@
 <script src="{{ asset('vendor/summernote/lang/summernote-ar-AR.min.js') }}"></script>
 <script>
 $(document).ready(function() {
+    var toolbar = [
+        ['style',    ['style']],
+        ['font',     ['bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'clear']],
+        ['fontsize', ['fontsize']],
+        ['color',    ['color']],
+        ['para',     ['ul', 'ol', 'paragraph']],
+        ['height',   ['height']],
+        ['table',    ['table']],
+        ['insert',   ['link', 'picture', 'hr']],
+        ['view',     ['fullscreen', 'codeview']]
+    ];
+
     $('#description_en').summernote({
-        height: 220,
+        height: 300,
         dialogsInBody: true,
-        toolbar: [
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['insert', ['link']],
-            ['view', ['codeview']]
-        ],
+        toolbar: toolbar,
         placeholder: 'Product description in English...',
         callbacks: {
             onInit: function() {
@@ -112,22 +131,33 @@ $(document).ready(function() {
         }
     });
     $('#description_ar').summernote({
-        height: 220,
+        height: 300,
         lang: 'ar-AR',
         dialogsInBody: true,
-        toolbar: [
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['font', ['strikethrough']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['insert', ['link']],
-            ['view', ['codeview']]
-        ],
+        toolbar: toolbar,
         placeholder: 'وصف المنتج بالعربية...',
         callbacks: {
             onInit: function() {
                 $('.note-dropdown-menu').css('z-index', 99999);
             }
         }
+    });
+
+    function patchSummernoteDropdowns() {
+        $('.note-toolbar [data-toggle="dropdown"]').each(function() {
+            $(this)
+                .attr('data-bs-toggle', 'dropdown')
+                .removeAttr('data-toggle');
+        });
+        $('.note-dropdown-menu, .note-editor .dropdown-menu').css('z-index', 99999);
+    }
+
+    setTimeout(patchSummernoteDropdowns, 100);
+
+    $(document).on('click', '.note-toolbar', function() {
+        setTimeout(function() {
+            $('.note-dropdown-menu, .note-editor .dropdown-menu').css('z-index', 99999);
+        }, 10);
     });
 });
 </script>

@@ -13,10 +13,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-       Artisan::call('storage:link');
         $products = Product::latest()->take(6)->get();
-
         return view('website.pages.home', compact('products'));
     }
 }

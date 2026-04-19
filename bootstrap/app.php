@@ -11,6 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Must run before SubstituteBindings so missing product slugs can 301/302 instead of 404.
+        $middleware->prependToGroup('web', \App\Http\Middleware\ApplyUrlRedirects::class);
+        
+        $middleware->prependToPriorityList(
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\ApplyUrlRedirects::class,
+        );
+
         $middleware->alias([
             /**** OTHER MIDDLEWARE ALIASES ****/
             'localize' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
@@ -18,6 +26,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'localeSessionRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
             'localeCookieRedirect' => \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
             'localeViewPath' => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class,
+            'url.redirect' => \App\Http\Middleware\ApplyUrlRedirects::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

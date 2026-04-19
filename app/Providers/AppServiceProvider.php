@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\View\Composers\WebsiteSeoComposer;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('website.layouts.master', WebsiteSeoComposer::class);
     }
 }
