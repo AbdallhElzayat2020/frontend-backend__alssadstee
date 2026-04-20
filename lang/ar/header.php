@@ -11,6 +11,7 @@ return [
     'quality' => 'الجودة والشهادات',
     'jobs' => 'التوظيف',
     'products' => 'المنتجات',
+    'blog' => 'المدونة',
     'contact_us' => 'تواصل معنا',
     'request_quote' => 'طلب عرض سعر',
     'toggle_menu' => 'تبديل القائمة',

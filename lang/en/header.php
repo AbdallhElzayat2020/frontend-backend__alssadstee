@@ -11,6 +11,7 @@ return [
     'quality' => 'Quality',
     'jobs' => 'Jobs',
     'products' => 'Products',
+    'blog' => 'Blog',
     'contact_us' => 'Contact Us',
     'request_quote' => 'Request Quote',
     'toggle_menu' => 'Toggle menu',

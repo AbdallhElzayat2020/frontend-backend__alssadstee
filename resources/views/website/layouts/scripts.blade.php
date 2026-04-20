@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
     // Pause video on small screens to save data
-    (function () {
+    (function() {
         var video = document.getElementById("bgVideo");
 
         function check() {
@@ -10,8 +10,7 @@
             if (window.innerWidth < 768) {
                 video.pause();
             } else {
-                video.play().catch(function () {
-                });
+                video.play().catch(function() {});
             }
         }
 
@@ -19,18 +18,21 @@
         var productCards = document.querySelectorAll(".product-card");
 
         window.addEventListener("resize", check);
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             check();
             handleScroll();
         });
 
-        window.addEventListener("scroll", function () {
+        window.addEventListener("scroll", function() {
             handleScroll();
         });
 
         if (scrollTopBtn) {
-            scrollTopBtn.addEventListener("click", function () {
-                window.scrollTo({ top: 0, behavior: "smooth" });
+            scrollTopBtn.addEventListener("click", function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
             });
         }
 
@@ -45,22 +47,23 @@
 
         if ("IntersectionObserver" in window) {
             var cardObserver = new IntersectionObserver(
-                function (entries, observer) {
-                    entries.forEach(function (entry) {
+                function(entries, observer) {
+                    entries.forEach(function(entry) {
                         if (entry.isIntersecting) {
                             entry.target.classList.add("in-view");
                             observer.unobserve(entry.target);
                         }
                     });
-                },
-                { threshold: 0.2 }
+                }, {
+                    threshold: 0.2
+                }
             );
 
-            productCards.forEach(function (card) {
+            productCards.forEach(function(card) {
                 cardObserver.observe(card);
             });
         } else {
-            productCards.forEach(function (card) {
+            productCards.forEach(function(card) {
                 card.classList.add("in-view");
             });
         }
@@ -68,8 +71,8 @@
         // Smooth scroll for anchor links
         document
             .querySelectorAll('a[href^="#"]:not(.dropdown-item)')
-            .forEach(function (anchor) {
-                anchor.addEventListener("click", function (e) {
+            .forEach(function(anchor) {
+                anchor.addEventListener("click", function(e) {
                     var href = this.getAttribute("href");
                     if (href.length > 1) {
                         e.preventDefault();
@@ -94,7 +97,7 @@
     // Collect all gallery images
     function initGalleryImages() {
         var galleryItems = document.querySelectorAll('.media-gallery-item');
-        galleryImages = Array.from(galleryItems).map(function (item) {
+        galleryImages = Array.from(galleryItems).map(function(item) {
             return {
                 src: item.getAttribute('data-image'),
                 title: item.getAttribute('data-title'),
@@ -106,7 +109,7 @@
     if (imageModal) {
         initGalleryImages();
 
-        imageModal.addEventListener('show.bs.modal', function (event) {
+        imageModal.addEventListener('show.bs.modal', function(event) {
             var button = event.relatedTarget;
             if (button) {
                 var imageSrc = button.getAttribute('data-image');
@@ -135,7 +138,7 @@
         // Previous image button
         var prevBtn = imageModal.querySelector('#prevImage');
         if (prevBtn) {
-            prevBtn.addEventListener('click', function (e) {
+            prevBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 navigateImage(-1);
             });
@@ -144,14 +147,14 @@
         // Next image button
         var nextBtn = imageModal.querySelector('#nextImage');
         if (nextBtn) {
-            nextBtn.addEventListener('click', function (e) {
+            nextBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
                 navigateImage(1);
             });
         }
 
         // Keyboard navigation
-        imageModal.addEventListener('keydown', function (e) {
+        imageModal.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
                 e.preventDefault();
                 if (e.key === 'ArrowRight') {
@@ -202,3 +205,8 @@
         once: true,
     });
 </script>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NP9RQLL9" height="0" width="0"
+        style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->

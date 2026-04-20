@@ -62,6 +62,11 @@
                 </li>
 
                 <li class="nav-item">
+                    <a class="nav-link {{ request()->routeIs('blog.*') ? 'active' : '' }}"
+                        href="{{ route('blog.index') }}">{{ __('header.blog') }}</a>
+                </li>
+
+                <li class="nav-item">
                     <a class="nav-link {{ request()->routeIs('contact-us') ? 'active' : '' }}"
                         href="{{ route('contact-us') }}">{{ __('header.contact_us') }}</a>
                 </li>
